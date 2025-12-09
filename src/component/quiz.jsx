@@ -12,7 +12,7 @@ export default function Quiz() {
     },
     {
       question: "What is the capital of India?",
-      options: ["Pune", "Delhi", "Japan", "Sun"],
+      options: ["Pune", "Delhi", "Goa", "Gujarat"],
       answer: "Delhi"
     }
   ]
