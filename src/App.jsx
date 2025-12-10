@@ -1,17 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import Quiz from './component/Quiz'
+import Quiz from './component/quiz' // Note: Ensure the import matches the file name accurately. The file system might be case sensitive.
+import Welcome from './component/Welcome'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [quizStarted, setQuizStarted] = useState(false)
 
   return (
     <>
       <div>
-        <Quiz />
+        {!quizStarted ? (
+          <Welcome onStart={() => setQuizStarted(true)} />
+        ) : (
+          <Quiz />
+        )}
       </div>
-
     </>
   )
 }

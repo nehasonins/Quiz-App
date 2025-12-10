@@ -1,36 +1,122 @@
-.App {
+/* Scoped to quiz-container to avoid affecting other parts */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Fun, bright background */
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+  /* Playful font fallback */
+  padding: 20px;
+}
+
+.quiz-card {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 5px solid #fff;
+  position: relative;
   text-align: center;
 }
 
-ul {
+/* Question Styling */
+.quiz-card h2 {
+  color: #ff6b6b;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 0px #ffd3d3;
+}
+
+/* Options List Styling */
+.quiz-card ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-li {
-  margin: 10px 0;
-  padding: 10px;
+.quiz-card li {
+  background-color: #f0f3ff;
+  border: 3px solid #e0e7ff;
+  border-radius: 15px;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  color: #4a4a4a;
   cursor: pointer;
-  background-color: #f4f4f4;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
-li:hover {
-  background-color: #ddd;
+.quiz-card li:hover {
+  background-color: #ffeaa7;
+  /* Pastel yellow on hover */
+  border-color: #fdcb6e;
+  transform: scale(1.02);
 }
 
-.selected {
-  background-color: #6cb5d7;
+/* Selected Option Styling */
+.quiz-card li.selected {
+  background-color: #55efc4;
+  /* Pastel green */
+  border-color: #00b894;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(85, 239, 196, 0.4);
 }
 
+/* Button Styling */
 .button {
-  background-color: #0dbc72;
-  border-radius: 20px;
-  width: 20%;
+  margin-top: 30px;
+  background-color: #a29bfe;
+  /* Pastel purple */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 5px 0 #6c5ce7;
+  /* 3D effect */
+}
+
+.button:hover {
+  background-color: #6c5ce7;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #4834d4;
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #4834d4;
 }
 
 .button-disable {
-  border-radius: 20px;
-  width: 20%;
+  margin-top: 30px;
+  background-color: #dfe6e9;
+  color: #b2bec3;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
   cursor: not-allowed;
+}
+
+/* Score Section */
+.score-section h2 {
+  color: #0984e3;
+  font-size: 2.5rem;
+}
+
+.score-section p {
+  font-size: 2rem;
+  color: #2d3436;
+  font-weight: bold;
 }

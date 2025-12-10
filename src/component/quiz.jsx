@@ -6,15 +6,27 @@ export default function Quiz() {
   const [score, setScore] = useState(0);
   const questions = [
     {
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Madrid"],
-      answer: "Paris"
+      question: "What file format is used for defining React components?",
+      options: [".html", ".jsx", ".jsm", ".react"],
+      answer: ".jsx"
+    },
+
+    {
+      question: " What is React primarily used for?",
+      options: ["Backend development", "Creating server-side logic", "Building user interfaces", "Managing databasesat"],
+      answer: "Building user interfaces"
     },
     {
-      question: "What is the capital of India?",
-      options: ["Pune", "Delhi", "Goa", "Gujarat"],
-      answer: "Delhi"
+      question: " Which of the following is a top-level API provided by React?",
+      options: ["React.renderComponent", "React.createElement", "React.initialize", "React.setupComponent"],
+      answer: "React.createElement"
+    },
+    {
+      question: " What command is used to create a new React app using the React CLI?",
+      options: ["react-init", "react-new-app", "npx create-react-app", "npm install react-app"],
+      answer: "npx create-react-app"
     }
+
   ]
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -31,8 +43,8 @@ export default function Quiz() {
   }
 
   return (
-    <>
-      <div>
+    <div className="quiz-container">
+      <div className="quiz-card">
         {currentQuestion < questions.length ?
           <div>
             <QuestionList question={questions[currentQuestion].question}
@@ -41,12 +53,12 @@ export default function Quiz() {
             <button disabled={currentAnswer === null} className={currentAnswer === null ? 'button-disable' : 'button'} onClick={handleNextQuestion}>Next </button>
           </div>
           : (
-            <div>
+            <div className="score-section">
               <h2>Quiz Completed!</h2>
               <p>Final Score: {score}</p>
             </div>
           )}
       </div>
-    </>
+    </div>
   )
 }
